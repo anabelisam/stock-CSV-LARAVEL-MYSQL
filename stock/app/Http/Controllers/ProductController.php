@@ -55,4 +55,9 @@ class ProductController extends Controller
     private function updateState($idproduct, $state){
         $updateState = DB::table('products')->where('idproduct', $idproduct)->update(['state' => $state]);
     }
+
+    public function getAllProducts(){ //It's public because is used in routes/web.php and readCsv too.
+        $allProducts = DB::table('products')->get();
+        return $allProducts;
+    }
 }

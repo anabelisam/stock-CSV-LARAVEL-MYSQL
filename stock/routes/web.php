@@ -12,3 +12,4 @@
 */
 
 Route::get('/readCsv', 'ProductController@readCsv');
+Route::get('/viewProducts', 'ProductController@getAllProducts');
