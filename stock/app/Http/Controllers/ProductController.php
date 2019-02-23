@@ -19,7 +19,7 @@ class ProductController extends Controller
                 $command = $data[1];
                 $units = isset($data[2]) ? $data[2] : null;
             }
-            $this->processCommand($idproduct, $command, $units);
+            $this->processCommand($idproduct, $command, $units); //Choose action by command
         }
         fclose($file);
     }
@@ -30,10 +30,13 @@ class ProductController extends Controller
                 $this->addUnits($idproduct, $units);
             break;
             case 'Restar':
+                $this->substractUnits($idproduct, $units);
             break;
             case 'Activar':
+                $this->updateState($idproduct, 1);
             break;
             case 'Desactivar':
+                $this->updateState($idproduct, 0);
             break;
             default:
                 return 'No command found';
@@ -43,5 +46,13 @@ class ProductController extends Controller
     
     private function addUnits($idproduct, $units){
         $incrementUnits = DB::table('products')->where('idproduct', $idproduct)->increment('units', $units);
+    }
+
+    private function substractUnits($idproduct, $units){
+        $decrementUnits = DB::table('products')->where('idproduct', $idproduct)->decrement('units', $units);
+    }
+
+    private function updateState($idproduct, $state){
+        $updateState = DB::table('products')->where('idproduct', $idproduct)->update(['state' => $state]);
     }
 }
