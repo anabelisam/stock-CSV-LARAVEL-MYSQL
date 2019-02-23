@@ -27,6 +27,7 @@ class ProductController extends Controller
     private function processCommand($idproduct, $command, $units){
         switch($command){
             case 'Agregar':
+                $this->addUnits($idproduct, $units);
             break;
             case 'Restar':
             break;
@@ -38,5 +39,9 @@ class ProductController extends Controller
                 return 'No command found';
             break;
         }
+    }  
+    
+    private function addUnits($idproduct, $units){
+        $incrementUnits = DB::table('products')->where('idproduct', $idproduct)->increment('units', $units);
     }
 }
