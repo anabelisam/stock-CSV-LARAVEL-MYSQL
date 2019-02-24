@@ -5,7 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Stock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <style>
+        header {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin: 0px;
+            border-collapse: collapse;
+        }
+        table, tr, td, th {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,6 +29,11 @@
     <main>
         <table>
             <thead>
+                <tr>
+                    <th colspan=7>
+                        <h3>All Products</h3>
+                    </th>
+                </tr>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
@@ -37,6 +57,13 @@
                 </tr>
                 @endforeach
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan=7>
+                        Footer table
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </main>
 </body>
