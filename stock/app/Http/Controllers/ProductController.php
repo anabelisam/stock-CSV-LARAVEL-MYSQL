@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     //This funtion will read a testingCsv on develop mode [WIP]
-    public function readCsv(){ //For the moment, we are'nt receiving any request
-        $file_path = public_path('temporal/testing.csv'); //We have a temporally .csv file to testing on develop mode
+    public function readCsv(Request $request){ //For the moment, we are'nt receiving any request
+        $file_path = $request->file;
         $file = fopen($file_path, "r"); //Open the file
         $row = 0;
         while (($data = fgetcsv($file, ",")) == true) {
