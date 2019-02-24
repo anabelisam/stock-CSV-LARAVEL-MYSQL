@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    //This funtion will read a testingCsv on develop mode [WIP]
-    public function readCsv(Request $request){ //For the moment, we are'nt receiving any request
+    public function readCsv(Request $request){
         $file_path = $request->file;
         $file = fopen($file_path, "r"); //Open the file
         $row = 0;
@@ -22,6 +21,7 @@ class ProductController extends Controller
             $this->processCommand($idproduct, $command, $units); //Choose action by command
         }
         fclose($file);
+        return redirect('/');
     }
 
     private function processCommand($idproduct, $command, $units){
