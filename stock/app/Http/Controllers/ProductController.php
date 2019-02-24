@@ -58,6 +58,6 @@ class ProductController extends Controller
 
     public function getAllProducts(){ //It's public because is used in routes/web.php and readCsv too.
         $allProducts = DB::table('products')->get();
-        return $allProducts;
+        return view('products', ['allProducts' => $allProducts]);
     }
 }

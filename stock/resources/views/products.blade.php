@@ -1,5 +1,4 @@
-<!doctype html>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -26,15 +25,17 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($allProducts as $product)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $product->idproduct }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->ref }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->cost }}</td>
+                    <td>{{ $product->units }}</td>
+                    <td>{{ $product->state }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </main>
