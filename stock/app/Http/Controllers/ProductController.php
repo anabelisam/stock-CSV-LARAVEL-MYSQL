@@ -27,15 +27,19 @@ class ProductController extends Controller
     private function processCommand($idproduct, $command, $units){
         switch($command){
             case 'Agregar':
+            case 'agregar':
                 $this->addUnits($idproduct, $units);
             break;
             case 'Restar':
+            case 'restar':
                 $this->substractUnits($idproduct, $units);
             break;
             case 'Activar':
+            case 'activar':
                 $this->updateState($idproduct, 1);
             break;
             case 'Desactivar':
+            case 'desactivar':
                 $this->updateState($idproduct, 0);
             break;
             default:
