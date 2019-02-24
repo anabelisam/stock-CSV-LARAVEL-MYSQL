@@ -60,7 +60,15 @@
             <tfoot>
                 <tr>
                     <td colspan=7>
-                        Footer table
+                        {!! Form::open(
+                            array('url' => '/readCsv', 'class' => 'form', 'novalidate' => 'novalidate', 'files' => true)) 
+                        !!}
+
+                        {!! Form::label('Import .CSV File') !!}
+                        {!! Form::file('file', null) !!}
+                        {!! Form::submit('Submit') !!}
+
+                        {!! Form::close() !!}
                     </td>
                 </tr>
             </tfoot>
