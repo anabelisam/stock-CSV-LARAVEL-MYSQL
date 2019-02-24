@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/readCsv', 'ProductController@readCsv');
+Route::post('/readCsv', 'ProductController@readCsv');
 Route::get('/', 'ProductController@getAllProducts');
