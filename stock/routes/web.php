@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/readCsv', 'ProductController@readCsv');
+Route::get('/', 'ProductController@getAllProducts');
