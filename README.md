@@ -11,11 +11,8 @@ The result is a table with the list of products in the [database attached here](
 
 <p align="center" max-width="300px"><img src="https://github.com/anabelisam/stock-CSV-LARAVEL-MYSQL/blob/develop/planning/view.PNG"></p>
 
-## Notes
-I have learned how to do my first unit test with PHPUnit, it has been my biggest challenge in this project.
-
 ## Run project
-Remember clone the project and configure the database in your local machine.
+Just clone the project and configure the database in your local machine.
 
 ```bash
 php artisan serve.
